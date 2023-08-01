@@ -1,39 +1,52 @@
---[[
+-- Loading Screen
+if _G.LoadingScreen ~= true then
+    local ScreenGui = Instance.new("ScreenGui")
+                            local Frame = Instance.new("Frame")
+                            local TextLabel = Instance.new("TextLabel")
+                            local ImageLabel = Instance.new("ImageLabel")
+                            local TextLabel_2 = Instance.new("TextLabel")
 
-You can configure mostly everything here. Set things to true or false.
-Or using numbers if that's listed.
+                            --Properties:
 
---]]
-
-local MainSettings = {
-	
-	LoadingScreen = { -- Settings to configurate the Loading Sequence / Custom Loading Gui
-
-		AssetFolder = game:GetService("ReplicatedStorage"):WaitForChild("AssetFolder"); -- Change this if you have a custom folder.
+                            ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+                            ScreenGui.DisplayOrder = 999999999
 		
-		SkipButton = false; -- Enable/Disable a skip button which lets players skip loading.
-		LoadingBar = false; -- Display the Loading Bar
 		
-		DefaultRobloxUI = false; -- Enable/Disable the Default Roblox UI when in the loading screen.
-		
-		-- UI Element Configuration
-		
-		TopText = ""; -- Top text to display. Leave nothing in the quotation marks if you don't want this.
-		BottomText = ""; -- Bottom text to display. Leave nothing in the quotation marks if you don't want this.
-		BackgroundImage = "rbxassetid://14252656756"; -- Set a background image for the loading screen.
+                            Frame.Parent = ScreenGui
+                            Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                            Frame.Position = UDim2.new(-1.1603854, 0, -1.10370374, 0)
+                            Frame.Size = UDim2.new(0, 1000000, 0, 100000000)
+							UIAspectRatioConstraint = Frame
+							
+                            TextLabel.Parent = ScreenGui
+                            TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                            TextLabel.BackgroundTransparency = 1.000
+                            TextLabel.Position = UDim2.new(0.1512353545, 0, 0.373532414, 0)
+                            TextLabel.Size = UDim2.new(0, 1245, 0, 310)
+                            TextLabel.ZIndex = 3
+                            TextLabel.Font = Enum.Font.SourceSansBold
+                            TextLabel.Text = "We're restarting Pet Simulator X!"
+                            TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                            TextLabel.TextSize = 70.000
+                            TextLabel.TextWrapped = true
 
-		RandomizedTextEnabled = false; -- Randomizes a list of words and displays them on a text label every 5 seconds.
-		RandomizedText = { -- The texts that get randomized and displayed on the Loading Sequence.
+                            ImageLabel.Parent = ScreenGui
+                            ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                            ImageLabel.BackgroundTransparency = 1.000
+                            ImageLabel.Position = UDim2.new(0.3251033338259, 0, 0.13342583251, 0)
+                            ImageLabel.Size = UDim2.new(0, 510, 0, 259)
+                            ImageLabel.ZIndex = 2
+                            ImageLabel.Image = "http://www.roblox.com/asset/?id=13949112615"
 
-			-- You can add as much as you want. Use this and enter your texts. "";
-
-			"";
-			"";
-			"";
-
-		}
-	}
-	
-}
-
-return MainSettings
+                            TextLabel_2.Parent = ScreenGui
+                            TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                            TextLabel_2.BackgroundTransparency = 1.000
+                            TextLabel_2.Position = UDim2.new(0.1512353545, 0, 0.468594134, 0)
+                            TextLabel_2.Size = UDim2.new(0, 1245, 0, 310)
+                            TextLabel_2.ZIndex = 3
+                            TextLabel_2.Font = Enum.Font.SourceSansBold
+                            TextLabel_2.Text = "Please wait while we redirect you..."
+                            TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+                            TextLabel_2.TextSize = 36.000
+                            TextLabel_2.TextWrapped = true
+end
